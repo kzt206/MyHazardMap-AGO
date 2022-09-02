@@ -1,0 +1,396 @@
+/* Acer 1366x768 */
+:root{
+    --display-width:1500px;
+}
+.title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:30px;
+    width:calc(var(--display-width));
+    margin-bottom: 5px;
+    /* border: dashed 1px red; */
+}
+
+#title-name{
+    width: 30%;
+}
+#title-label{
+    width: 40%;
+    /* background-color:blue; */
+}
+
+#save-button{
+    width: 5%;
+    margin-right: 10px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+}
+
+#load-button{
+    width: 100%;
+    margin-right: 30px;
+    margin-left: 0px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+}
+
+#download-button1{
+    width: 15%;
+    /* margin-left: 300px; */
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+
+}
+#download-button1:hover{
+    margin-top: 3px;
+    color: #000;
+    background: #00b7ff;
+    border-bottom: 2px solid #024f97;
+}
+
+#download-button2{
+    width: 15%;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+
+}
+#download-button2:hover{
+    margin-top: 3px;
+    color: #000;
+    background: #00b7ff;
+    border-bottom: 2px solid #024f97;
+}
+.workspace{
+    display: flex;
+    width:var(--display-width);
+    height: 670px;
+    /* height:720px; */
+    /* border: dashed 1px red; */
+}
+
+.tool-box{
+    width:150px;
+    /* border:dashed 1px blue; */
+}
+#tool-box-title{
+    color:#000;
+    text-align: center;
+
+}
+
+#tool-map{
+    height:40px;
+}
+
+#map-load-button{
+    margin-top: 5px;
+    text-align: center;
+    background-color: #f8f285;
+    border: 5px solid white;
+    border-radius: 10px;
+
+}
+#map-load-button:hover{
+    margin-top: 5px;
+    color: #000;
+    background: #fff100;
+    border: 5px solid white;
+}
+
+/* #map-load-button{
+    margin-top: 5px;
+    text-align: center;
+    background-color: #fff100;
+    border-bottom: 5px solid #ccc100;
+    border-radius: 10px;
+
+}
+#map-load-button:hover{
+    margin-top: 5px;
+    color: #000;
+    background: #fff100;
+    border-bottom: 2px solid #ccc100;
+} */
+
+input[type='file']{
+    display:none;
+}
+
+.tool-box-row{
+    /* margin-top:5px; */
+    display: flex;
+    height:9%;
+}
+
+.tool,.toolColor,.toolThickness{
+    margin-top:1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:solid 4px white;
+    width:50%;
+}
+
+.toolButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* vertical-align: middle; */
+    width:100%;
+    height:100%;
+}
+
+#tool-last{
+    border-bottom: solid 1px gray;
+    margin-bottom: 3px;
+}
+/* #tool-color{
+    border-bottom: solid 1px gray;
+    margin-bottom: 3px;
+} */
+
+.tool:hover{
+    /* background-color: #000; */
+    border:solid 4px yellow;
+    border-radius: 30%;
+}
+
+.toolColor:hover{
+    background-color: rgb(209, 209, 209);
+    border:solid 4px white;
+    border-radius: 30%;
+}
+
+.toolThickness:hover{
+    background-color: rgb(209, 209, 209);
+    border:solid 4px white;
+    border-radius: 30%;
+
+}
+.activeTool{
+    border:solid 4px red;
+    border-radius: 30%;
+    /* transform:scale(1.5); */
+}
+.activeColor{
+    border:solid 4px pink;
+    border-radius: 30%;
+    /* transform:scale(1.5); */
+}
+.activeThickness{
+    border:solid 4px orange;
+    border-radius: 30%;
+    /* transform:scale(1.5); */
+}
+
+#blueButton{
+    color:blue; 
+    font-weight: bold;
+    width:100%;
+    height:100%;
+    /* background-color:blue; */
+    /* border-radius:50%; */
+    /* border: solid 6px white; */
+}
+
+#greenButton{
+    color:green;
+    font-weight:bold;
+    width:100%;
+    height:100%;
+}
+
+#redButton{
+    color:red; 
+    font-weight: bold;
+    width:100%;
+    height:100%;
+    /* background-color:blue; */
+    /* border-radius:50%; */
+    /* border: solid 6px white; */
+}
+
+#orangeButton{
+    color:orange;
+    font-weight:bold;
+    width:100%;
+    height:100%;
+}
+
+
+#thickButton{
+    width:100%;
+    height:100%;
+}
+#thinButton{
+    width:100%;
+    height:100%;
+}
+
+.map{
+    width:956px;
+    height: 670px;
+    position: relative;
+    /* background-color: rgba(212, 212, 212, 0.801); */
+    margin-left:5px;
+    /* margin-right:30px; */
+    /* border: dashed 1px blue; */
+}
+
+.canvasSpace{
+    width:956px;
+}
+
+#canvasMap{
+    position:absolute;
+     background-color: rgba(212, 212, 212, 0.801);
+    /* top:100px; */
+    /* left:200px; */
+    /* margin-left: 200; */
+    border: solid 3px gray;
+    /* margin-right: 5px; */
+}
+
+#canvasPaint{
+    position:absolute;
+    border: solid 3px gray;
+    /* padding:100; */
+    /* margin-left: 500; */
+    /* border: solid 2px green; */
+}
+
+#canvasContact{
+    display: none !important; /* 非表示設定 */
+}
+
+
+.photos{
+    width:200px;
+    height:100%;
+    /* margin-left: 30px; */
+    /* border: dashed 1px blue; */
+}
+
+.photos-row{
+    /* border:solid 1px black; */
+    /* padding-top: 5px; */
+    height:25%;
+}
+
+.photos-title{
+    height:20%;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(202, 244, 250);
+    border-radius: 10px;
+    /* border:dashed 1px blue; */
+}
+
+.photos-canvas{
+    height:75%;
+}
+
+
+/* 下枠の設定 */
+
+.low-frame{
+    /* margin: 0px; */
+    display: flex;
+    width:var(--display-width);
+    margin-top:30px;
+    margin-right: 0px;
+}
+
+.fukidashi{
+    width: 40%;
+    display: inline;
+    margin-right:10px;
+    /* border: dashed 1px blue; */
+}
+
+.fukidashi-row{
+    display: flex;
+    width:100%;
+}
+
+.fukidashi-title{
+    height:30px;
+    width: 10%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border:dashed 1px blue; */
+}
+
+.fudashi-comment{
+    width: 90%;
+}
+
+.textFukidashi{
+    resize:none; /* 伸縮不可 */
+    width:450px;
+    height:3.9em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Chrome, Safari */
+    font-size: 12pt;
+    overflow: hidden;
+    /* border: dashed 1px blue; */
+}
+
+.comment{
+    /* display: flex; */
+    width:60%;
+    /* height:100px; */
+    /* border: dashed 1px red; */
+}
+
+.comment-row{
+    width:100%;
+}
+
+.comment-title{
+    height:30px;
+}
+
+#comment-title1{
+    background-color: rgb(202, 244, 250);
+}
+
+#comment-title2{
+    background-color: rgb(217, 250, 202);
+}
+
+.textComment{
+    resize:none; /* 伸縮不可 */
+    width:100%; 
+    height: 6.0em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Chrome, Safari */
+    font-size: 12pt;
+    overflow: hidden;
+}

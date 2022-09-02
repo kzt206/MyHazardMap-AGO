@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- cdnjs -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+        <link rel="stylesheet" href="style.css">
+        <title>My Hazard Map Maker</title>
+    </head>
+
+    <body>
+        <!-- 画面のタイトルの設定 -->
+        <div class="title">
+            名前：
+            <div class="title-name">
+                <input type="text" id="name" name="name" required
+                minlength="4" maxlength="15" size="20" placeholder="名前を入力">
+            </div>
+            <div id="title-label">自分だけのマップ　づくり　アプリ（安居小学校バージョン）</div>
+            <!-- <div id="title-label">マイ　ハザード　マップ　を作ろう！</div> -->
+            <div class="download-button" id="save-button">save</div>
+            <label>
+                <input class="file" type="file" id="loadPaintFile"  accept=".png,.jpeg,.jpg">
+                <!-- <p id="load-button">load</p> -->
+                <div class="download-button" id="load-button">load</div>
+            </label>
+            <div class="download-button" id="download-button1">ダウンロードボタン１</div>
+            <div class="download-button" id="download-button2">ダウンロードボタン２</div>
+        </div>
+
+        <!-- 作業するスペース -->
+        <div class="workspace">
+            <!-- 作業道具を入れるスペース -->
+            <div class="tool-box">
+                <div id="tool-box-title">道具箱</div>
+                <div id="tool-map">
+                    <label><!-- ユーザーインターフェースの項目のキャプション-->
+                        <input class="file" type="file" id="loadMapFile"  accept=".png,.jpeg,.jpg">
+                        <p id="map-load-button">マップを選ぶ</p>
+                     </label>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="homeButton" class="toolButton" ><img src="image/home.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="schoolButton" class="toolButton"><img src="image/school.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="evacuationButton" class="toolButton"><img src="image/evacuation.png"></a>
+                     </div>
+                     <div class="tool activeTool" onclick="selectButton(this)">
+                        <a id="penButton" class="toolButton"><img src="image/pentype.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="camera1Button" class="toolButton"><img src="image/camera1.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="camera2Button" class="toolButton"><img src="image/camera2.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="camera3Button" class="toolButton"><img src="image/camera3.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="camera4Button" class="toolButton"><img src="image/camera4.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="camera5Button" class="toolButton"><img src="image/camera5.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="camera6Button" class="toolButton"><img src="image/camera6.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="camera7Button" class="toolButton"><img src="image/camera7.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="camera8Button" class="toolButton"><img src="image/camera8.png"></a>
+                     </div>
+                </div>
+                <!-- 
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="note1Button" class="toolButton"><img src="image/note1.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="note2Button" class="toolButton"><img src="image/note2.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="note3Button" class="toolButton" ><img src="image/note3.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="note4Button" class="toolButton"><img src="image/note4.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="note1Button" class="toolButton"><img src="image/note1.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="note2Button" class="toolButton"><img src="image/note2.png"></a>
+                     </div>
+                </div>
+                <div class="tool-box-row">
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="note3Button" class="toolButton" ><img src="image/note3.png"></a>
+                     </div>
+                     <div class="tool" onclick="selectButton(this)">
+                        <a id="note4Button" class="toolButton"><img src="image/note4.png"></a>
+                     </div>
+                </div>
+                 -->
+                <!-- クリアボタン作成 -->
+                <div class="tool-box-row" id="tool-last">
+                    <!-- 消しゴムボタン作成 -->
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="eraserButton" class="iconButton"><img src="image/eraser.png" ></a> 
+                    </div>
+                    <!-- 全消しボタン作成 -->
+                    <div class="tool">
+                        <a id="alleraseButton" class="iconButton" onclick="confirmFunction()"><img src="image/all_erase.png"></a> 
+                    </div>
+                </div>
+                <div class="tool-box-row" id="tool">
+                    <div class="toolColor activeColor" data-color="blue" onclick="selectColor(this)">
+                        <a id="blueButton" class="toolButton">青</a>
+                     </div>
+                     <div class="toolColor" data-color="green" onclick="selectColor(this)">
+                        <a id="greenButton" class="toolButton">緑</a>
+                     </div>
+                </div>
+                <div class="tool-box-row" id="tool-last">
+                    <div class="toolColor" data-color="red" onclick="selectColor(this)">
+                        <a id="redButton" class="toolButton">赤</a>
+                     </div>
+                     <div class="toolColor" data-color="orange" onclick="selectColor(this)">
+                        <a id="orangeButton" class="toolButton">オレ<br>ンジ</a>
+                     </div>
+                </div>
+                <div class="tool-box-row" id="tool-thickness">
+                    <div class="toolThickness activeThickness" onclick="selectThickness(this)">
+                        <a id="thickButton" class="toolButton">太</a>
+                     </div>
+                     <div class="toolThickness" onclick="selectThickness(this)">
+                        <a id="thinButton" class="toolButton">細</a>
+                     </div>
+                </div>
+                
+            </div>
+            <!-- マップを表示したり記入したりするスペース -->
+            <div class="map">
+                <div class="canvasSpace">
+                    <!-- <canvas id="canvasMap"   style="width:750px; height:500px"></canvas> 
+                    <canvas id="canvasPaint"  style="width:750px; height:500px"></canvas> -->
+                    <canvas id="canvasMap"></canvas> 
+                    <canvas id="canvasPaint"></canvas>
+                    <canvas id="canvasContact"></canvas> <!-- 非表示 -->
+                </div>
+            </div>
+
+            <!-- カメラ画像を設定したり表示するスペース -->
+            <div class="photos">
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto1" accept=".png,.jpeg,.jpg"> <img src="image/camera1.png"  height="40">
+                        </label>
+                        <input type="text" id="photo1title" maxlength="8" size="12" placeholder="写真1の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto1" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto2" accept=".png,.jpeg,.jpg"> <img src="image/camera2.png" height="40">
+                        </label>
+                        <input type="text" id="photo2title" maxlength="8" size="12" placeholder="写真2の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto2" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto3" accept=".png,.jpeg,.jpg"> <img src="image/camera3.png" height="40">
+                        </label>
+                        <input type="text" id="photo3title" maxlength="8" size="12" placeholder="写真3の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto3" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto4" accept=".png,.jpeg,.jpg"> <img src="image/camera4.png" height="40">
+                        </label>
+                        <input type="text" id="photo4title" maxlength="8" size="12" placeholder="写真4の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto4" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photos">
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto5" accept=".png,.jpeg,.jpg"> <img src="image/camera5.png"  height="40">
+                        </label>
+                        <input type="text" id="photo5title" maxlength="8" size="12" placeholder="写真5の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto5" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto6" accept=".png,.jpeg,.jpg"> <img src="image/camera6.png" height="40">
+                        </label>
+                        <input type="text" id="photo6title" maxlength="8" size="12" placeholder="写真6の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto6" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto7" accept=".png,.jpeg,.jpg"> <img src="image/camera7.png" height="40">
+                        </label>
+                        <input type="text" id="photo7title" maxlength="8" size="12" placeholder="写真7の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto7" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+                <div class="photos-row">
+                    <div class="photos-title">
+                        <label>
+                            <input class="file" type="file" id="selectPhoto8" accept=".png,.jpeg,.jpg"> <img src="image/camera8.png" height="40">
+                        </label>
+                        <input type="text" id="photo8title" maxlength="8" size="12" placeholder="写真8の説明を入力">
+                    </div>
+                    <div class="photos-canvas">
+                        <canvas id="canvasPhoto8" class="canvasPhoto"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下枠のスペース -->
+        <div class="low-frame">
+            <!-- 吹き出しの注釈を記入するスペース -->
+            <div class="fukidashi">
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note1Button" class="toolButton"><img src="image/note1.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi1" maxlength="78"></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note2Button" class="toolButton"><img src="image/note2.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi2" maxlength="78" ></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note3Button" class="toolButton"><img src="image/note3.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi3" maxlength="78" ></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note4Button" class="toolButton"><img src="image/note4.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi4" maxlength="78"></textarea>
+                    </div>
+                </div>
+            </div>
+             <!-- 吹き出しの注釈を記入するスペース２ -->
+             <div class="fukidashi">
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note5Button" class="toolButton"><img src="image/note5.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi5" maxlength="78"></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note6Button" class="toolButton"><img src="image/note6.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi6" maxlength="78" ></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note7Button" class="toolButton"><img src="image/note7.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi7" maxlength="78" ></textarea>
+                    </div>
+                </div>
+                <div class="fukidashi-row">
+                    <div class="fukidashi-title tool" onclick="selectButton(this)">
+                        <a id="note8Button" class="toolButton"><img src="image/note8.png"></a>
+                    </div>
+                    <div class="fukidashi-comment">
+                        <textarea class="textFukidashi" name="" id="fukidashi8" maxlength="78"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- コメントを書くスペース -->
+            <div class="comment">
+                <div class="comment-row">
+                    <div class="comment-title" id="comment-title1">
+                       避難路を考えた理由
+                    </div>
+                    <textarea class="textComment" name="" id="comment1"  maxlength="145" pattern="[^\x20-\x7E]*"></textarea>
+                </div>
+                <div class="comment-row">
+                    <div class="comment-title" id="comment-title2">
+                        自分の家の周りの様子
+                    </div>
+                    <textarea class="textComment" name="" id="comment2"  maxlength="145"></textarea>
+                </div>          
+            </div>
+        </div>
+
+        <!-- javascriptファイルの読み込み -->
+        <script src="script.js"></script>
+    </body>
+</html>
