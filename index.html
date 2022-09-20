@@ -21,16 +21,16 @@
                 <input type="text" id="name" name="name" required
                 minlength="4" maxlength="15" size="20" placeholder="名前を入力">
             </div>
-            <div id="title-label">自分だけのマップ　づくり　アプリ（安居小学校バージョン）</div>
+            <div id="title-label">マイハザードマップづくり（安居小学校バージョン）</div>
             <!-- <div id="title-label">マイ　ハザード　マップ　を作ろう！</div> -->
-            <div class="download-button" id="save-button">save</div>
-            <label>
+            <!-- <div class="download-button" id="save-button">save</div> -->
+            <!-- <label>
                 <input class="file" type="file" id="loadPaintFile"  accept=".png,.jpeg,.jpg">
-                <!-- <p id="load-button">load</p> -->
-                <div class="download-button" id="load-button">load</div>
-            </label>
-            <div class="download-button" id="download-button1">ダウンロードボタン１</div>
-            <div class="download-button" id="download-button2">ダウンロードボタン２</div>
+                <p id="load-button">load</p>
+                <div class="download-button" id="load-button">load</div>    
+            </label>  -->
+            <div class="download-button" id="download-button1">ダウンロードボタン</div>
+            <!-- <div class="download-button" id="download-button2">ダウンロードボタン２</div> -->
         </div>
 
         <!-- 作業するスペース -->
@@ -181,7 +181,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto1" accept=".png,.jpeg,.jpg"> <img src="image/camera1.png"  height="40">
                         </label>
-                        <input type="text" id="photo1title" maxlength="8" size="12" placeholder="写真1の説明を入力">
+                        <input type="text" id="photo1title" maxlength="8" size="12" placeholder="写真1のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto1" class="canvasPhoto"></canvas>
@@ -192,7 +192,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto2" accept=".png,.jpeg,.jpg"> <img src="image/camera2.png" height="40">
                         </label>
-                        <input type="text" id="photo2title" maxlength="8" size="12" placeholder="写真2の説明を入力">
+                        <input type="text" id="photo2title" maxlength="8" size="12" placeholder="写真2のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto2" class="canvasPhoto"></canvas>
@@ -203,7 +203,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto3" accept=".png,.jpeg,.jpg"> <img src="image/camera3.png" height="40">
                         </label>
-                        <input type="text" id="photo3title" maxlength="8" size="12" placeholder="写真3の説明を入力">
+                        <input type="text" id="photo3title" maxlength="8" size="12" placeholder="写真3のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto3" class="canvasPhoto"></canvas>
@@ -214,7 +214,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto4" accept=".png,.jpeg,.jpg"> <img src="image/camera4.png" height="40">
                         </label>
-                        <input type="text" id="photo4title" maxlength="8" size="12" placeholder="写真4の説明を入力">
+                        <input type="text" id="photo4title" maxlength="8" size="12" placeholder="写真4のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto4" class="canvasPhoto"></canvas>
@@ -228,7 +228,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto5" accept=".png,.jpeg,.jpg"> <img src="image/camera5.png"  height="40">
                         </label>
-                        <input type="text" id="photo5title" maxlength="8" size="12" placeholder="写真5の説明を入力">
+                        <input type="text" id="photo5title" maxlength="8" size="12" placeholder="写真5のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto5" class="canvasPhoto"></canvas>
@@ -239,7 +239,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto6" accept=".png,.jpeg,.jpg"> <img src="image/camera6.png" height="40">
                         </label>
-                        <input type="text" id="photo6title" maxlength="8" size="12" placeholder="写真6の説明を入力">
+                        <input type="text" id="photo6title" maxlength="8" size="12" placeholder="写真6のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto6" class="canvasPhoto"></canvas>
@@ -250,7 +250,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto7" accept=".png,.jpeg,.jpg"> <img src="image/camera7.png" height="40">
                         </label>
-                        <input type="text" id="photo7title" maxlength="8" size="12" placeholder="写真7の説明を入力">
+                        <input type="text" id="photo7title" maxlength="8" size="12" placeholder="写真7のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto7" class="canvasPhoto"></canvas>
@@ -261,7 +261,7 @@
                         <label>
                             <input class="file" type="file" id="selectPhoto8" accept=".png,.jpeg,.jpg"> <img src="image/camera8.png" height="40">
                         </label>
-                        <input type="text" id="photo8title" maxlength="8" size="12" placeholder="写真8の説明を入力">
+                        <input type="text" id="photo8title" maxlength="8" size="12" placeholder="写真8のせつめい">
                     </div>
                     <div class="photos-canvas">
                         <canvas id="canvasPhoto8" class="canvasPhoto"></canvas>
@@ -279,7 +279,7 @@
                         <a id="note1Button" class="toolButton"><img src="image/note1.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi1" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi1" maxlength="60"></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -287,7 +287,7 @@
                         <a id="note2Button" class="toolButton"><img src="image/note2.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi2" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi2" maxlength="60" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -295,7 +295,7 @@
                         <a id="note3Button" class="toolButton"><img src="image/note3.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi3" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi3" maxlength="60" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -303,7 +303,7 @@
                         <a id="note4Button" class="toolButton"><img src="image/note4.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi4" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi4" maxlength="60"></textarea>
                     </div>
                 </div>
             </div>
@@ -314,7 +314,7 @@
                         <a id="note5Button" class="toolButton"><img src="image/note5.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi5" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi5" maxlength="60"></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -322,7 +322,7 @@
                         <a id="note6Button" class="toolButton"><img src="image/note6.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi6" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi6" maxlength="60" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -330,7 +330,7 @@
                         <a id="note7Button" class="toolButton"><img src="image/note7.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi7" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi7" maxlength="60" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -338,7 +338,7 @@
                         <a id="note8Button" class="toolButton"><img src="image/note8.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi8" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi8" maxlength="60"></textarea>
                     </div>
                 </div>
             </div>
@@ -348,13 +348,13 @@
                     <div class="comment-title" id="comment-title1">
                        学校のまわりできづいたこと
                     </div>
-                    <textarea class="textComment" name="" id="comment1"  maxlength="145" pattern="[^\x20-\x7E]*"></textarea>
+                    <textarea class="textComment" name="" id="comment1"  maxlength="120" pattern="[^\x20-\x7E]*"></textarea>
                 </div>
                 <div class="comment-row">
                     <div class="comment-title" id="comment-title2">
                         災害から、身を守るために考えたこと
                     </div>
-                    <textarea class="textComment" name="" id="comment2"  maxlength="145"></textarea>
+                    <textarea class="textComment" name="" id="comment2"  maxlength="120"></textarea>
                 </div>          
             </div>
         </div>
